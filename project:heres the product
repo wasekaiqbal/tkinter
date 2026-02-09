@@ -1,0 +1,37 @@
+from tkinter import *
+
+window = Tk()
+window.title("lets Calculate product")
+window.geometry('500x600')
+
+lbl1 = Label(text="CALCULATING PRODUCTS", height=2, width=450, bg="#829AC5", fg ='white', pady=2)
+
+lbl2 = Label(text="enter the numbers in text box to calculate the product", height=2, bg="#A182C5", fg ='white',pady=4)
+
+lbl_num1= Label(text="enter first number", height=2, bg="#D9D9DA", fg ='black',pady=3)
+lbl_num2= Label(text="enter second number", height=2, bg="#D9D9DA", fg ='black',pady=3)
+
+num1_entry = Entry()
+num2_entry = Entry()
+
+def product():
+    num1 = float(num1_entry.get())
+    num2 = float(num2_entry.get())
+    calculate = num1 * num2
+
+    text_box.insert(END, "product=" + str(calculate)+ '\n')
+
+btn = Button(text='calculate', command=product, height=2,width=15)
+
+text_box = Text(height=4, width=30)
+
+lbl1.pack()
+lbl2.pack()
+lbl_num1.pack()
+num1_entry.pack()
+lbl_num2.pack()
+num2_entry.pack()
+btn.pack()
+text_box.pack()
+
+window.mainloop()
